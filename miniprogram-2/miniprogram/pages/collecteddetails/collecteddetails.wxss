@@ -1,0 +1,166 @@
+/* 基础布局 */
+.page {
+  min-height: 100vh;
+  padding: calc(env(safe-area-inset-top) + 20rpx) 32rpx 220rpx;
+}
+
+.page-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.page-bg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 导航头 */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.back-icon {
+  position: absolute;
+  left: 0;
+  font-size: 40rpx;
+  color: #374151;
+  padding: 10rpx;
+}
+
+.nav-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #374151;
+}
+
+/* 卡片样式 */
+.result-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24rpx;
+  border: 4rpx solid #ffffff;
+  padding: 32rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.05);
+}
+
+.card-header-text {
+  font-size: 28rpx;
+  color: #9CA3AF;
+  margin-bottom: 20rpx;
+}
+
+.result-image {
+  width: 100%;
+  height: 420rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+  background-color: #f8f8f8;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #374151;
+}
+
+.action-icons {
+  display: flex;
+  gap: 24rpx;
+}
+
+.icon-sm {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/* 详情信息条目 */
+.info-line {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.info-icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.info-text {
+  font-size: 24rpx;
+  color: #6B7280;
+  margin-right: 10rpx;
+}
+
+.tag-mini {
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+}
+
+.tag-mini.blue { background: #EFF6FF; color: #2B7FFF; }
+.tag-mini.cyan { background: #ECFEFF; color: #00B8DB; }
+
+.feedback-line {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx dashed #E5E7EB;
+}
+
+/*底部按钮 */
+
+.fixed-bottom-actions {
+  position: fixed;
+  inset: auto 0 0 0;
+  background: #ffffff;
+  padding: 32rpx 40rpx calc(32rpx + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 28rpx;
+  box-shadow: 0 -8rpx 28rpx rgba(0, 0, 0, 0.08);
+}
+
+.btn-redo,
+.btn-submit {
+  flex: 1;
+  height: 112rpx;
+  border-radius: 28rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+}
+
+/* 次按钮 */
+.btn-redo {
+  border: 4rpx solid #FFBEE3;
+  color: #FF99D7;
+  background: #FFFFFF;
+}
+
+/* 主按钮 */
+.btn-submit {
+  background: linear-gradient(135deg, #F07BCD 0%, #F6B0E1 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8rpx 24rpx rgba(240,123,205,0.35);
+}
+
+.btn-icon {
+  width: 44rpx;
+  height: 44rpx;
+}

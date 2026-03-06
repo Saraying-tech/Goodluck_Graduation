@@ -1,0 +1,246 @@
+.page {
+  min-height: 100vh;
+  padding: calc(env(safe-area-inset-top) + 40rpx) 32rpx 200rpx;
+}
+
+.page-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.page-bg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 用户卡片 */
+.user-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 24rpx;
+  border: 4rpx solid #ffffff;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.user-info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  background: #FCE7F3;
+  color: #F472B6;
+  font-size: 48rpx;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.nickname-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #374151;
+  margin-right: 12rpx;
+}
+
+.edit-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.tag-row {
+  display: flex;
+  gap: 12rpx;
+}
+
+.u-tag {
+  display: flex;
+  align-items: center;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+}
+
+.tag-icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 6rpx;
+}
+
+.tag-blue { background: #EFF6FF; color: #2B7FFF; }
+.tag-cyan { background: #ECFEFF; color: #00B8DB; }
+
+.divider {
+  height: 2rpx;
+  background: rgba(255,255,255,0.4);
+  margin: 30rpx 0;
+}
+
+/* 统计区域 */
+.section-title {
+  font-size: 28rpx;
+  font-weight: medium;
+  color: #374151;
+  margin-bottom: 24rpx;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.stats-num {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 8rpx;
+}
+
+.stats-label {
+  font-size: 24rpx;
+  color: #9CA3AF;
+}
+
+/* 菜单列表 */
+.menu-list {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 24rpx;
+  border: 4rpx solid #ffffff;
+  padding: 10rpx 32rpx;
+  margin-bottom: 60rpx;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36rpx 0;
+  border-bottom: 2rpx solid rgba(0,0,0,0.05);
+}
+
+.menu-item:last-child { border-bottom: none; }
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #374151;
+}
+
+.menu-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 24rpx;
+}
+
+.arrow-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/* 退出按钮 */
+.logout-btn {
+  width: 100% !important;
+  height: 100rpx;
+  background: linear-gradient(135deg, #F6B0E1 0%, #F07BCD 100%);
+  color: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 10rpx 30rpx rgba(240, 123, 205, 0.3);
+}
+
+.logout-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 16rpx;
+}
+/* --- 5. 底部导航栏 --- */
+.tab-bar-custom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180rpx; 
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; 
+  padding-top: 20rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 4rpx solid rgba(255, 255, 255);
+  z-index: 9999; 
+}
+
+.tab-item {
+  width: 160rpx;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 55rpx; 
+  transition: all 0.2s ease-in-out;
+  /* 增加点击灵敏度 */
+  pointer-events: auto; 
+}
+
+/* 选中态：粉色背景胶囊 */
+.tab-item.is-active {
+  background: #FCE5F5;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-img {
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 6rpx;
+}
+
+.tab-text {
+  font-size: 24rpx;
+  color: #999999; 
+}
+
+.tab-item.is-active .tab-text {
+  color: #F07BCD;
+  font-weight: bold;
+}
+
+/* 装饰波纹 */
+.wave-decoration {
+  position: absolute;
+  width: 100rpx;
+  height: 4rpx;
+  background: rgba(240, 123, 205, 0.2);
+  border-radius: 2rpx;
+  z-index: -1; /* 波纹不要挡住按钮 */
+}
+.wave-decoration.left { left: 40rpx; }
+.wave-decoration.right { right: 40rpx; }

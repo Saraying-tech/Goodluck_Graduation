@@ -1,0 +1,135 @@
+<view class="page">
+
+<!-- 背景 -->
+<view class="page-bg-wrapper">
+  <image
+    class="page-bg"
+    src="/assets/images/儿童沟通辅助小程序 1.png"
+    mode="aspectFill"
+  />
+</view>
+
+<!-- 内容区 -->
+<view class="page-content">
+
+  <!-- ================= 结果卡片 ================= -->
+  <view class="result-card">
+
+    <image
+      class="result-image"
+      src="{{imageUrl}}"
+      mode="aspectFill"
+    />
+
+    <view class="result-content">
+
+      <view class="result-title">
+        {{contentText}}
+      </view>
+
+      <!-- 时间 -->
+      <view class="result-time">
+        <image
+          class="time-icon"
+          src="/assets/icons/time.png"
+          mode="aspectFit"
+        />
+        <text class="time-text">
+          {{dateText}}
+        </text>
+      </view>
+
+      <!-- 标签 -->
+      <view class="tag-row">
+        <view class="tag tag-blue">日常生活</view>
+        <view class="tag tag-pink">{{styleTag}}</view>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- ================= 反馈区 ================= -->
+  <view class="feedback-section">
+
+    <view class="section-title">
+      孩子反馈
+    </view>
+
+    <view class="emoji-grid">
+
+      <view
+        class="emoji-card {{selectedEmoji==='satisfied'?'active':''}}"
+        data-type="satisfied"
+        bindtap="selectEmoji"
+      >
+        <image class="emoji-icon" src="/assets/icons/emoji_satisfied.png" mode="aspectFit"/>
+        <text class="emoji-label">满意</text>
+      </view>
+
+      <view
+        class="emoji-card {{selectedEmoji==='happy'?'active':''}}"
+        data-type="happy"
+        bindtap="selectEmoji"
+      >
+        <image class="emoji-icon" src="/assets/icons/emoji_happy.png" mode="aspectFit"/>
+        <text class="emoji-label">开心</text>
+      </view>
+
+      <view
+        class="emoji-card {{selectedEmoji==='laugh'?'active':''}}"
+        data-type="laugh"
+        bindtap="selectEmoji"
+      >
+        <image class="emoji-icon" src="/assets/icons/emoji_laugh.png" mode="aspectFit"/>
+        <text class="emoji-label">大笑</text>
+      </view>
+
+      <view
+        class="emoji-card {{selectedEmoji==='lost'?'active':''}}"
+        data-type="lost"
+        bindtap="selectEmoji"
+      >
+        <image class="emoji-icon" src="/assets/icons/emoji_lost.png" mode="aspectFit"/>
+        <text class="emoji-label">失落</text>
+      </view>
+
+      <view
+        class="emoji-card {{selectedEmoji==='sad'?'active':''}}"
+        data-type="sad"
+        bindtap="selectEmoji"
+      >
+        <image class="emoji-icon" src="/assets/icons/emoji_sad.png" mode="aspectFit"/>
+        <text class="emoji-label">忧伤</text>
+      </view>
+
+      <view
+        class="emoji-card {{selectedEmoji==='cry'?'active':''}}"
+        data-type="cry"
+        bindtap="selectEmoji"
+      >
+        <image class="emoji-icon" src="/assets/icons/emoji_cry.png" mode="aspectFit"/>
+        <text class="emoji-label">大哭</text>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+
+<!-- ================= 底部按钮 ================= -->
+<view class="fixed-bottom-actions">
+
+  <view class="btn-redo" bindtap="onBack">
+    <image class="btn-icon" src="/assets/icons/redo.png" mode="aspectFit"/>
+    <text>重新生成</text>
+  </view>
+
+  <view class="btn-submit" bindtap="onConfirm">
+    <image class="btn-icon" src="/assets/icons/speak.png" mode="aspectFit"/>
+    <text>再说一句</text>
+  </view>
+
+</view>
+
+</view>

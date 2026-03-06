@@ -1,0 +1,119 @@
+<view class="page">
+  <view class="page-bg-wrapper">
+    <image class="page-bg" src="/assets/images/儿童沟通辅助小程序 1.png" mode="aspectFill" />
+  </view>
+
+  <view class="page-content" style="padding-bottom: 220rpx;">
+    
+    <view class="user-card">
+      <view class="user-info-row">
+        <view class="avatar">{{userInfo.avatar || 'C'}}</view>
+        <view class="user-main">
+          <view class="nickname-row">
+            <text class="nickname">{{userInfo.nickname || '陈妈妈'}}</text>
+            <image class="edit-icon" src="/assets/icons/edit.png" mode="aspectFit" />
+          </view>
+          <view class="tag-row">
+            <view class="u-tag tag-blue">
+              <image src="/assets/icons/tag_baby.png" class="tag-icon"/>
+              <text>3岁孩子宝妈</text>
+            </view>
+            <view class="u-tag tag-cyan">
+              <image src="/assets/icons/tag_location.png" class="tag-icon"/>
+              <text>粤语家庭</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="divider"></view>
+
+      <view class="stats-section">
+        <view class="section-title">互动情况</view>
+        <view class="stats-grid">
+          <view class="stats-item">
+            <text class="stats-num">{{stats.exchange || 0}}</text>
+            <text class="stats-label">交流量</text>
+          </view>
+          <view class="stats-item">
+            <text class="stats-num">{{stats.adopt || 0}}</text>
+            <text class="stats-label">采纳量</text>
+          </view>
+          <view class="stats-item">
+            <text class="stats-num">{{stats.share || 0}}</text>
+            <text class="stats-label">分享量</text>
+          </view>
+          <view class="stats-item">
+            <text class="stats-num">{{stats.favorite || 0}}</text>
+            <text class="stats-label">收藏量</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="menu-list">
+      <view class="menu-item" bindtap="navTo" data-url="style">
+        <view class="menu-left">
+          <image class="menu-icon" src="/assets/icons/menu_style.png" />
+          <text>我的画风</text>
+        </view>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png" />
+      </view>
+      
+      <view class="menu-item" bindtap="navTo" data-url="gallery">
+        <view class="menu-left">
+          <image class="menu-icon" src="/assets/icons/menu_manage.png" />
+          <text>画库管理</text>
+        </view>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png" />
+      </view>
+
+      <view class="menu-item" bindtap="navTo" data-url="guide">
+        <view class="menu-left">
+          <image class="menu-icon" src="/assets/icons/menu_guide.png" />
+          <text>家长指南</text>
+        </view>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png" />
+      </view>
+
+      <view class="menu-item" bindtap="navTo" data-url="about">
+        <view class="menu-left">
+          <image class="menu-icon" src="/assets/icons/menu_about.png" />
+          <text>关于本研究</text>
+        </view>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png" />
+      </view>
+    </view>
+
+    <button class="logout-btn" bindtap="onLogout">
+      <image class="logout-icon" src="/assets/icons/logout.png" />
+      <text>退出登录</text>
+    </button>
+  </view>
+
+  <view class="tab-bar-custom">
+    <view class="tab-item {{activeValue === 'home' ? 'is-active' : ''}}" 
+          catchtap="onTabChange" data-value="home">
+      <view class="tab-content" style="pointer-events: none;">
+        <image class="tab-img" src="/assets/icons/home_{{activeValue === 'home' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">首页</text>
+      </view>
+    </view>
+
+    <view class="tab-item {{activeValue === 'daily' ? 'is-active' : ''}}" 
+          catchtap="onTabChange" data-value="daily"> 
+      <view class="tab-content" style="pointer-events: none;">
+        <image class="tab-img" src="/assets/icons/album_{{activeValue === 'daily' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">画册</text>
+      </view>
+    </view>
+
+    <view class="tab-item {{activeValue === 'user' ? 'is-active' : ''}}" 
+          catchtap="onTabChange" data-value="user">
+      <view class="tab-content" style="pointer-events: none;">
+        <image class="tab-img" src="/assets/icons/user_{{activeValue === 'user' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">我的</text>
+      </view>
+    </view>
+  </view>
+</view>

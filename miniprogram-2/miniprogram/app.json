@@ -1,0 +1,23 @@
+{
+  "pages": [
+   "pages/input/input",
+   "pages/text/text",
+   "pages/album/album",
+   "pages/daily/daily",
+   "pages/dailydetails/dailydetails",
+   "pages/collecteddetails/collecteddetails",
+   "pages/user/user",
+   "pages/style/style",
+   "pages/gallery/gallery",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "lazyCodeLoading": "requiredComponents"
+}

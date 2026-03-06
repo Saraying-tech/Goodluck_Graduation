@@ -1,0 +1,51 @@
+<view class="page">
+  <view class="page-bg-wrapper">
+    <image class="page-bg" src="/assets/images/儿童沟通辅助小程序 1.png" mode="aspectFill" />
+  </view>
+
+  <view class="page-content">
+    <view class="result-card">
+      <view class="card-header-text">我的图库</view>
+      
+      <image class="result-image" src="{{imageUrl}}" mode="aspectFill" />
+
+      <view class="result-content">
+        <view class="title-row">
+          <view class="result-title">{{contentText}}</view>
+          <view class="action-icons">
+            <image class="icon-sm" src="/assets/icons/heart_active.png" mode="aspectFit" />
+            <image class="icon-sm" src="/assets/icons/share_normal.png" mode="aspectFit" />
+          </view>
+        </view>
+
+        <view class="info-line">
+          <image class="info-icon" src="/assets/icons/time.png" />
+          <text class="info-text">{{dateText}}</text>
+          <view class="tag-mini blue">日常生活</view>
+          <view class="tag-mini cyan">卡通风</view>
+        </view>
+
+        <view class="info-line feedback-line">
+          <image class="info-icon" src="/assets/icons/feeling_active.png" />
+          <text class="info-text">孩子反馈：{{feedbackLabel || '满意'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fixed-bottom-actions">
+    <view class="btn-redo" 
+          bindtap="onRebuild" 
+          hover-class="btn-hover-effect">
+      <image class="btn-icon" src="/assets/icons/redo.png" mode="aspectFit"/>
+      <text>重新生成</text>
+    </view>
+
+    <view class="btn-submit" 
+          bindtap="toTalk" 
+          hover-class="btn-hover-effect">
+      <image class="btn-icon" src="/assets/icons/speak.png" mode="aspectFit"/>
+      <text>再说一句</text>
+    </view>
+  </view>
+</view>

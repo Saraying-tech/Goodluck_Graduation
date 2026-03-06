@@ -1,0 +1,188 @@
+/* ========= 1. 基础布局与背景 ========= */
+.page {
+  min-height: 100vh;
+  padding: calc(env(safe-area-inset-top) + 20rpx) 32rpx 200rpx;
+}
+
+.page-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.page-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ========= 3. 结果展示卡片 ========= */
+.result-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24rpx; /* 圆角略微调大，更显亲和力 */
+  border: 4rpx solid #ffffff;
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.05);
+  padding: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.card-header-text {
+  font-size: 28rpx;
+  color: #9CA3AF;
+  margin-bottom: 24rpx;
+  letter-spacing: 2rpx;
+}
+
+.result-image {
+  width: 100%;
+  height: 400rpx; /* 增加图片高度，突出视觉重心 */
+  border-radius: 24rpx;
+  margin-bottom: 28rpx;
+  background-color: #f3f4f6; /* 图片加载前的占位色 */
+}
+
+.result-content {
+  padding: 0 8rpx;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #374151;
+}
+
+.action-icons {
+  display: flex;
+  gap: 28rpx;
+}
+
+.icon-sm {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/* --- 标签样式更新 --- */
+.tag-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.tag {
+  padding: 10rpx 24rpx;
+  border-radius: 9rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.tag-blue { 
+  background: #EFF6FF; 
+  color: #2B7FFF; 
+}
+
+.tag-cyan { 
+  background: #ECFEFF; 
+  color: #0891B2; 
+}
+
+/*反馈区*/
+
+.feedback-section {
+  margin-top: 48rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 400;
+  margin-bottom: 24rpx;
+  color: #1F2937;
+}
+
+/* 表情网格 */
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28rpx;
+}
+
+/* 表情卡片 */
+.emoji-card {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 24rpx;
+  padding: 32rpx 12rpx;
+  border: 4rpx solid rgba(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+/* 表情图标 */
+.emoji-icon {
+  width: 84rpx;
+  height: 84rpx;
+  margin-bottom: 16rpx;
+  transition: transform 0.25s ease;
+}
+
+/* 表情文字 */
+.emoji-label {
+  font-size: 28rpx;
+  color: #374151;
+}
+
+/* 选中状态 */
+.emoji-card.active {
+  border-color: #F07BCD;
+  background: linear-gradient(
+    135deg,
+    rgba(240,123,205,0.18) 0%,
+    rgba(246,176,225,0.28) 100%
+  );
+  box-shadow: 0 8rpx 24rpx rgba(240,123,205,0.25);
+}
+
+.emoji-card.active .emoji-icon {
+  transform: scale(1.12);
+}
+
+.emoji-card.active .emoji-label {
+  color: #F07BCD;
+  font-weight: 600;
+}
+
+/* ========= 5. 底部悬浮按钮 ========= */
+.fab-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: calc(60rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(135deg, #F6B0E1 0%, #F07BCD 100%);
+  padding: 28rpx 50rpx;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 12rpx 32rpx rgba(240, 123, 205, 0.4);
+  z-index: 99;
+}
+
+.fab-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+
+.fab-btn text {
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+}

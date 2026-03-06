@@ -1,0 +1,68 @@
+<view class="container">
+  <image class="page-bg" src="/assets/images/背景.jpg" mode="aspectFill"></image>
+
+  <view class="main-content">
+    <view class="illustration-placeholder"></view>
+
+    <view class="text-group">
+      <view class="main-title">{{isRecording ? '正在听您说话...' : '家长请按住说话...'}}</view>
+      <view class="description">
+        <text>请您用粤语说话，\n描述您想让孩子听见的内容。</text>
+      </view>
+    </view>
+
+    <view class="voice-section">
+      <view class="voice-waves {{isRecording ? 'active' : ''}}">
+        <view class="wave circle-1"></view>
+        <view class="wave circle-2"></view>
+        <view class="wave circle-3"></view>
+      </view>
+
+      <view class="wave-decoration left"></view>
+      
+      <view class="mic-wrapper {{isRecording ? 'recording' : ''}}" 
+            catchtouchstart="onStartRecord" 
+            catchtouchend="onStopRecord" 
+            hover-class="mic-hover">
+        <view class="mic-inner-gradient">
+          <image class="mic-icon" src="/assets/icons/mic_white.png" />
+        </view>
+      </view>
+
+      <view class="wave-decoration right"></view>
+    </view>
+
+    <view class="hint-text {{isRecording ? 'hidden-opacity' : ''}}">
+      <image class="hint-icon" src="/assets/icons/mic_gray.png" />
+      <text>请按住按钮说话</text>
+    </view>
+    
+    <view class="bottom-safe-area"></view>
+  </view>
+
+  <view class="tab-bar-custom">
+    <view class="tab-item {{activeValue === 'home' ? 'is-active' : ''}}" 
+          catchtap="onTabChange" data-value="home">
+      <view class="tab-content" style="pointer-events: none;">
+        <image class="tab-img" src="/assets/icons/home_{{activeValue === 'home' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">首页</text>
+      </view>
+    </view>
+
+    <view class="tab-item {{activeValue === 'daily' ? 'is-active' : ''}}" 
+          catchtap="onTabChange" data-value="daily"> 
+      <view class="tab-content" style="pointer-events: none;">
+        <image class="tab-img" src="/assets/icons/album_{{activeValue === 'daily' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">画册</text>
+      </view>
+    </view>
+
+    <view class="tab-item {{activeValue === 'user' ? 'is-active' : ''}}" 
+          catchtap="onTabChange" data-value="user">
+      <view class="tab-content" style="pointer-events: none;">
+        <image class="tab-img" src="/assets/icons/user_{{activeValue === 'user' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">我的</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="page-bg-wrapper">
+    <image class="page-bg" src="/assets/images/儿童沟通辅助小程序 1.png" mode="aspectFill" />
+  </view>
+
+  <view class="fixed-top">
+    <view class="header-card">
+      <view class="info-box">
+        <text class="num">{{galleryList.length}}</text>
+        <text class="label">图库总数</text>
+      </view>
+      <view class="line"></view>
+      <view class="info-box">
+        <text class="num">{{selectedCount}}</text>
+        <text class="label">当前选择</text>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="main-scroll" enhanced show-scrollbar="{{false}}">
+    <view class="card-grid">
+      <view class="empty-hint" wx:if="{{galleryList.length === 0}}">
+        <text>图库空空如也\n快去画册里收藏作品吧</text>
+      </view>
+
+      <block wx:for="{{galleryList}}" wx:key="id">
+        <view class="art-card {{item.selected ? 'active' : ''}}" bindtap="toggleSelect" data-id="{{item.id}}">
+          <view class="img-wrap">
+             <image class="card-img" src="{{item.url}}" mode="aspectFill" />
+          </view>
+          
+          <view class="check-box {{item.selected ? 'checked' : ''}}">
+            <view class="inner-tick" wx:if="{{item.selected}}"></view>
+          </view>
+
+          <view class="card-info">
+            <text class="title">{{item.title}}</text>
+            <view class="tag-box">
+              <text class="tag">{{item.tag1}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="fixed-bottom-actions">
+    <view class="btn-redo" bindtap="onSelectAll">
+      <view class="style-checkbox {{isAllSelected ? 'is-checked' : ''}}">
+        <view class="check-mark" wx:if="{{isAllSelected}}"></view>
+      </view>
+      <text>{{isAllSelected ? '取消' : '全选'}}</text>
+    </view>
+
+    <view class="btn-submit {{selectedCount === 0 ? 'btn-disabled' : ''}}" bindtap="onDelete">
+      <image class="btn-icon" src="/assets/icons/delete_white.png" mode="aspectFit" />
+      <text>移出图库 ({{selectedCount}})</text>
+    </view>
+  </view>
+</view>

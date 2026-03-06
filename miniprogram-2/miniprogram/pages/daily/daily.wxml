@@ -1,0 +1,104 @@
+<view class="container">
+  <view class="page-bg-wrapper">
+    <image class="page-bg" src="/assets/images/儿童沟通辅助小程序 1.png" mode="aspectFill" />
+  </view>
+
+  <view class="fixed-top-container">
+    <view class="header">
+      <view class="title-wrap">
+        <view class="title-item" bindtap="onSwitchTab" data-tab="daily">
+          <text class="title {{currentTab === 'daily' ? 'active' : ''}}">日常画册</text>
+          <view class="title-line {{currentTab === 'daily' ? 'show' : ''}}" />
+        </view>
+        <view class="title-item" bindtap="onSwitchTab" data-tab="gallery">
+          <text class="title {{currentTab === 'gallery' ? 'active' : ''}}">我的图库</text>
+          <view class="title-line {{currentTab === 'gallery' ? 'show' : ''}}" />
+        </view>
+      </view>
+    </view>
+
+    <scroll-view scroll-x class="filter-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="filter-group">
+        <view class="filter-item {{activeFilter === 'all' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="all">
+          <image class="filter-icon" src="/assets/icons/all_{{activeFilter === 'all' ? 'active' : 'normal'}}.png" />
+          <text>全部</text>
+        </view>
+        <view class="filter-item {{activeFilter === 'life' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="life">
+          <image class="filter-icon" src="/assets/icons/life_{{activeFilter === 'life' ? 'active' : 'normal'}}.png" />
+          <text>日常生活</text>
+        </view>
+        <view class="filter-item {{activeFilter === 'feeling' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="feeling">
+          <image class="filter-icon" src="/assets/icons/feeling_{{activeFilter === 'feeling' ? 'active' : 'normal'}}.png" />
+          <text>情感表达</text>
+        </view>
+        <view class="filter-item {{activeFilter === 'fun' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="fun">
+          <image class="filter-icon" src="/assets/icons/fun_{{activeFilter === 'fun' ? 'active' : 'normal'}}.png" />
+          <text>认知娱乐</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <scroll-view scroll-y class="content-scroll" enhanced show-scrollbar="{{false}}">
+    <view class="card-grid">
+      <block wx:for="{{artList}}" wx:key="id">
+        <view 
+          class="art-card" 
+          wx:if="{{ (currentTab === 'daily' || item.isFavorite) && (activeFilter === 'all' || (activeFilter === 'life' && item.tag1 === '日常生活') || (activeFilter === 'feeling' && item.tag1 === '情感表达') || (activeFilter === 'fun' && item.tag1 === '认知娱乐')) }}"
+          bindtap="toDetail" 
+          data-index="{{index}}"
+        >
+          
+          <view class="img-placeholder">
+            <image class="card-img" src="{{item.imageUrl}}" mode="aspectFill" lazy-load />
+          </view>
+          
+          <view class="card-info">
+            <view class="card-title-row">
+              <text class="card-title">{{item.title}}</text>
+              <view class="icon-group">
+                <image 
+                  class="action-icon" 
+                  src="/assets/icons/heart_{{item.isFavorite ? 'active' : 'normal'}}.png" 
+                  catchtap="onToggleFavorite" 
+                  data-index="{{index}}" 
+                />
+                <image class="action-icon" src="/assets/icons/share_normal.png" />
+              </view>
+            </view>
+            <view class="tag-row">
+              <text class="tag blue">{{item.tag1}}</text>
+              <text class="tag cyan">{{item.tag2}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="fab-btn" bindtap="toTalk">
+    <image class="fab-icon" src="/assets/icons/mic_white.png" />
+    <text>去对话</text>
+  </view>
+
+  <view class="tab-bar-custom">
+    <view class="tab-item {{activeValue === 'home' ? 'is-active' : ''}}" catchtap="onTabChange" data-value="home">
+      <view class="tab-content">
+        <image class="tab-img" src="/assets/icons/home_{{activeValue === 'home' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">首页</text>
+      </view>
+    </view>
+    <view class="tab-item {{activeValue === 'daily' ? 'is-active' : ''}}" catchtap="onTabChange" data-value="daily">
+      <view class="tab-content">
+        <image class="tab-img" src="/assets/icons/album_{{activeValue === 'daily' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">画册</text>
+      </view>
+    </view>
+    <view class="tab-item {{activeValue === 'user' ? 'is-active' : ''}}" catchtap="onTabChange" data-value="user">
+      <view class="tab-content">
+        <image class="tab-img" src="/assets/icons/user_{{activeValue === 'user' ? 'active' : 'normal'}}.png" />
+        <text class="tab-text">我的</text>
+      </view>
+    </view>
+  </view>
+</view>

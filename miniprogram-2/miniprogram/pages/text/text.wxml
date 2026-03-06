@@ -1,0 +1,134 @@
+<view class="container">
+
+<!-- 背景层 -->
+<view class="page-bg-wrapper">
+  <image 
+    class="page-bg" 
+    src="/assets/images/儿童沟通辅助小程序 1.png" 
+    mode="aspectFill" 
+  />
+</view>
+
+<!-- 顶部状态区 -->
+<view class="status-section">
+  <view class="success-icon-wrap">
+    <icon type="success" size="60" color="#FF99D7" />
+  </view>
+
+  <view class="status-title">识别成功</view>
+  <view class="status-sub">请确认语音识别的文字是否正确</view>
+</view>
+
+
+<!-- 主体滚动区 -->
+<scroll-view scroll-y class="content-scroll">
+
+  <!-- 内容容器（控制 12px 页边距） -->
+  <view class="content-inner">
+
+    <!-- 识别结果卡片 -->
+    <view class="glass-card result-card">
+      <view class="card-header">
+        <text class="card-label">识别文字</text>
+        <image 
+          class="edit-icon" 
+          src="/assets/icons/edit.png" 
+          mode="aspectFit" 
+        />
+      </view>
+
+      <textarea 
+        class="result-textarea" 
+        value="今日去超市买苹果" 
+        auto-height 
+        maxlength="50" 
+      />
+
+      <view class="word-count">0/50</view>
+    </view>
+
+
+    <!-- 风格标题 -->
+    <view class="style-title">请选择绘画风格</view>
+
+    <!-- 卡通风格 -->
+    <view 
+      class="style-card {{selectedStyle === 'cartoon' ? 'style-active' : ''}}"
+      bindtap="selectStyle"
+      data-style="cartoon"
+    >
+      <image class="style-img" src="/assets/images/style_cartoon.jpg" mode="aspectFill" />
+      <view class="style-info">
+        <view class="style-name">卡通风格</view>
+        <view class="style-desc">颜色鲜艳，线条清晰。</view>
+        <view class="style-tag">适合3-5岁</view>
+      </view>
+      <radio 
+        checked="{{selectedStyle === 'cartoon'}}" 
+        color="#FF99D7" 
+        class="style-radio" 
+      />
+    </view>
+
+
+    <!-- 手绘风格 -->
+    <view 
+      class="style-card {{selectedStyle === 'handdrawn' ? 'style-active' : ''}}"
+      bindtap="selectStyle"
+      data-style="handdrawn"
+    >
+      <image class="style-img" src="/assets/images/style_hand.jpg" mode="aspectFill" />
+      <view class="style-info">
+        <view class="style-name">手绘风格</view>
+        <view class="style-desc">笔触温暖，线条柔和。</view>
+        <view class="style-tag">适合3-5岁</view>
+      </view>
+      <radio 
+        checked="{{selectedStyle === 'handdrawn'}}" 
+        color="#FF99D7" 
+        class="style-radio" 
+      />
+    </view>
+
+
+    <!-- 水彩风格 -->
+    <view 
+      class="style-card {{selectedStyle === 'watercolor' ? 'style-active' : ''}}"
+      bindtap="selectStyle"
+      data-style="watercolor"
+    >
+      <image class="style-img" src="/assets/images/style_watercolor.jpg" mode="aspectFill" />
+      <view class="style-info">
+        <view class="style-name">水彩风格</view>
+        <view class="style-desc">颜色柔和晕染，自然细腻。</view>
+        <view class="style-tag">适合3-5岁</view>
+      </view>
+      <radio 
+        checked="{{selectedStyle === 'watercolor'}}" 
+        color="#FF99D7" 
+        class="style-radio" 
+      />
+    </view>
+
+
+    <!-- 底部占位 -->
+    <view style="height: 200rpx;"></view>
+
+  </view>
+</scroll-view>
+
+
+<!-- 底部固定按钮 -->
+<view class="fixed-bottom-actions">
+  <view class="btn-redo" bindtap="onBack">
+    <image class="btn-icon" src="/assets/icons/redo.png" />
+    <text>重新录音</text>
+  </view>
+
+  <view class="btn-submit" bindtap="onConfirm">
+    <image class="btn-icon" src="/assets/icons/check_white.png" />
+    <text>确认生成</text>
+  </view>
+</view>
+
+</view>

@@ -1,0 +1,247 @@
+/* ========= 1. 基础布局容器 (保持不变) ========= */
+page {
+  height: 100vh;
+  overflow: hidden; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.page-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.page-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========= 2. 顶部固定区 (精准修改标题动效) ========= */
+.fixed-top-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  background: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(10px);
+  padding-top: env(safe-area-inset-top);
+  box-shadow: 0 4rpx 30rpx rgba(0, 0, 0, 0.02);
+}
+
+.header {
+  padding: 20rpx 40rpx 0rpx;
+}
+
+.title-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 120rpx;
+}
+
+.title-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #374151;
+  transition: color 0.3s ease; 
+}
+
+.title.active {
+  color: #F07BCD;
+  font-weight: bold;
+}
+
+.title-line {
+  width: 44rpx;
+  height: 6rpx;
+  background: linear-gradient(135deg, #F07BCD 0%, #F6B0E1 100%);
+  border-radius: 6rpx;
+  margin-top: 10rpx;
+  opacity: 0;
+  transform: scaleX(0); 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.title-line.show {
+  opacity: 1;
+  transform: scaleX(1); 
+}
+
+/* 分类栏滑动 */
+.filter-scroll {
+  padding: 20rpx 0 25rpx;
+  white-space: nowrap;
+}
+
+.filter-group {
+  display: inline-flex;
+  padding: 0 40rpx;
+  gap: 20rpx;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  padding: 14rpx 30rpx;
+  border-radius: 60rpx;
+  background: rgba(255, 255, 255, 0.6);
+  border: 2rpx solid rgba(0, 0, 0, 0.05);
+  font-size: 26rpx;
+  color: #666;
+}
+
+.filter-item.active {
+  background: #FCE5F5;
+  border-color: #F07BCD;
+  color: #F07BCD;
+  font-weight: bold;
+}
+
+.filter-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
+}
+
+/* ========= 3. 内容滚动区 (保持不变) ========= */
+.content-scroll {
+  flex: 1;
+  height: 0; 
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 220rpx 32rpx 360rpx; 
+}
+
+.art-card {
+  width: 322rpx;
+  background: rgba(255, 255, 255, 0.4);
+  border: 4rpx solid rgba(255, 255, 255, 1);
+  border-radius: 28rpx;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.05);
+}
+
+.img-placeholder { 
+  width: 100%; 
+  height: 322rpx; 
+  background-color: #f8f8f8; 
+}
+
+.card-img { 
+  width: 100%; 
+  height: 100%; 
+  display: block; 
+}
+
+.card-info { 
+  padding: 20rpx; 
+}
+
+.card-title-row { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 15rpx; 
+}
+
+.card-title { 
+  font-size: 28rpx; 
+  font-weight: regular; 
+  color: #374151; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-icon { 
+  width: 44rpx; 
+  height: 44rpx; 
+  margin-left: 10rpx;
+}
+
+.tag-row { 
+  display: flex; 
+  gap: 16rpx; 
+}
+
+.tag { 
+  font-size: 24rpx; 
+  padding: 8rpx 14rpx; 
+  border-radius: 6rpx; 
+}
+
+.tag.blue { background: #EFF6FF; color: #2B7FFF; }
+.tag.cyan { background: #ECFEFF; color: #00B8DB; }
+
+/* ========= 4. 悬浮按钮 (位置调高) ========= */
+.fab-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 340rpx; /* 修改点：从 280 调到了 340 */
+  z-index: 1001; 
+  display: flex;
+  align-items: center;
+  padding: 24rpx 48rpx;
+  border-radius: 70rpx;
+  background: linear-gradient(135deg, #F6B0E1, #F07BCD);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 12rpx 30rpx rgba(240, 123, 205, 0.4);
+}
+
+.fab-icon { 
+  width: 34rpx; 
+  height: 34rpx; 
+  margin-right: 12rpx; 
+}
+
+/* ========= 5. 底部自定义 TabBar (保持不变) ========= */
+.tab-bar-custom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1002;
+  border-top: 4rpx solid rgba(255, 255, 255);
+}
+
+.tab-item { 
+  width: 160rpx; 
+  height: 110rpx; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 55rpx; 
+}
+
+.tab-item.is-active { background: #FCE5F5; }
+.tab-content { display: flex; flex-direction: column; align-items: center; }
+.tab-img { width: 48rpx; height: 48rpx; margin-bottom: 6rpx; }
+.tab-text { font-size: 24rpx; color: #999; }
+.tab-item.is-active .tab-text { color: #F07BCD; font-weight: bold; }

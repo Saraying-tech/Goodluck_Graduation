@@ -1,0 +1,109 @@
+<view class="page">
+  <view class="page-bg-wrapper">
+    <image class="page-bg" src="/assets/images/儿童沟通辅助小程序 1.png" mode="aspectFill" />
+  </view>
+
+  <view class="page-content">
+    <view class="result-card">
+      <view class="card-header-text">{{pageType === 'daily' ? '日常画册' : '我的图库'}}</view>
+      
+      <image class="result-image" src="{{imageUrl || '/assets/images/sample1.jpg'}}" mode="aspectFill" />
+
+      <view class="result-content">
+        <view class="title-row">
+          <view class="result-title">{{contentText || '加载中...'}}</view>
+          <view class="action-icons">
+            <image 
+              class="icon-sm" 
+              src="/assets/icons/heart_{{isFavorite ? 'active' : 'normal'}}.png" 
+              mode="aspectFit" 
+              bindtap="onToggleFavorite"
+            />
+            <image 
+              class="icon-sm" 
+              src="/assets/icons/share_normal.png" 
+              mode="aspectFit" 
+              bindtap="onShare"
+            />
+          </view>
+        </view>
+
+        <view class="tag-row">
+          <view class="tag tag-blue">日常生活</view>
+          <view class="tag tag-cyan">{{styleTag || '水彩风'}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="feedback-section">
+      <view class="section-title">孩子反馈</view>
+
+      <view class="emoji-grid">
+        <view 
+          class="emoji-card {{selectedEmoji === 'satisfied' ? 'active' : ''}}" 
+          data-type="satisfied" 
+          bindtap="selectEmoji"
+        >
+          <image class="emoji-icon" src="/assets/icons/emoji_satisfied.png" mode="aspectFit"/>
+          <view class="active-line" wx:if="{{selectedEmoji === 'satisfied'}}"></view>
+          <text class="emoji-label">满意</text>
+        </view>
+
+        <view 
+          class="emoji-card {{selectedEmoji === 'happy' ? 'active' : ''}}" 
+          data-type="happy" 
+          bindtap="selectEmoji"
+        >
+          <image class="emoji-icon" src="/assets/icons/emoji_happy.png" mode="aspectFit"/>
+          <view class="active-line" wx:if="{{selectedEmoji === 'happy'}}"></view>
+          <text class="emoji-label">开心</text>
+        </view>
+
+        <view 
+          class="emoji-card {{selectedEmoji === 'laugh' ? 'active' : ''}}" 
+          data-type="laugh" 
+          bindtap="selectEmoji"
+        >
+          <image class="emoji-icon" src="/assets/icons/emoji_laugh.png" mode="aspectFit"/>
+          <view class="active-line" wx:if="{{selectedEmoji === 'laugh'}}"></view>
+          <text class="emoji-label">大笑</text>
+        </view>
+
+        <view 
+          class="emoji-card {{selectedEmoji === 'lost' ? 'active' : ''}}" 
+          data-type="lost" 
+          bindtap="selectEmoji"
+        >
+          <image class="emoji-icon" src="/assets/icons/emoji_lost.png" mode="aspectFit"/>
+          <view class="active-line" wx:if="{{selectedEmoji === 'lost'}}"></view>
+          <text class="emoji-label">失落</text>
+        </view>
+
+        <view 
+          class="emoji-card {{selectedEmoji === 'sad' ? 'active' : ''}}" 
+          data-type="sad" 
+          bindtap="selectEmoji"
+        >
+          <image class="emoji-icon" src="/assets/icons/emoji_sad.png" mode="aspectFit"/>
+          <view class="active-line" wx:if="{{selectedEmoji === 'sad'}}"></view>
+          <text class="emoji-label">忧伤</text>
+        </view>
+
+        <view 
+          class="emoji-card {{selectedEmoji === 'cry' ? 'active' : ''}}" 
+          data-type="cry" 
+          bindtap="selectEmoji"
+        >
+          <image class="emoji-icon" src="/assets/icons/emoji_cry.png" mode="aspectFit"/>
+          <view class="active-line" wx:if="{{selectedEmoji === 'cry'}}"></view>
+          <text class="emoji-label">大哭</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fab-btn" bindtap="toTalk">
+    <image class="fab-icon" src="/assets/icons/mic_white.png" mode="aspectFit" />
+    <text>去对话</text>
+  </view>
+</view>
