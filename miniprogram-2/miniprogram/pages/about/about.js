@@ -1,15 +1,14 @@
 Page({
   data: {
     project: {
-      name: 'Goodluck Graduation Demo',
-      version: '0.1.0-demo',
-      summary:
-        'A mini-program frontend demo focused on communication practice workflows.',
+      name: '毕业设计前端演示',
+      version: 'v0.1.0-demo',
+      summary: '这是一个聚焦亲子沟通训练流程的微信小程序前端 Demo。',
     },
     items: [
-      'Voice input and text confirmation flow',
-      'Style selection and generated card display',
-      'Daily album and favorites management',
+      '语音输入与文本确认流程',
+      '风格选择与生成结果展示',
+      '日常画册与收藏管理流程',
     ],
   },
 

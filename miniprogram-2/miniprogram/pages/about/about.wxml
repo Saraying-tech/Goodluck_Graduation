@@ -6,7 +6,7 @@
   </view>
 
   <view class="card">
-    <text class="card-title">Included Demo Flows</text>
+    <text class="card-title">当前包含功能流程</text>
     <block wx:for="{{items}}" wx:key="*this">
       <view class="row">
         <view class="dot"></view>
@@ -16,6 +16,6 @@
   </view>
 
   <view class="footer">
-    <view class="back-btn" bindtap="onBack">Back</view>
+    <view class="back-btn" bindtap="onBack">返回</view>
   </view>
 </view>
