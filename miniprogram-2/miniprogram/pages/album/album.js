@@ -91,7 +91,7 @@ Page({
   onShareAppMessage() {
     return {
       title: '看，这是我为孩子生成的绘本插画！',
-      path: '/pages/daily/index',
+      path: '/pages/daily/daily',
       imageUrl: this.data.imageUrl
     };
   }

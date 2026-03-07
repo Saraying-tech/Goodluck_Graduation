@@ -1,0 +1,76 @@
+.page {
+  min-height: 100vh;
+  background: #fff7fb;
+  padding: 28rpx 28rpx 180rpx;
+  box-sizing: border-box;
+}
+
+.hero {
+  border-radius: 24rpx;
+  padding: 30rpx;
+  background: linear-gradient(135deg, #ffd7ec 0%, #f8c6ee 100%);
+  box-shadow: 0 10rpx 30rpx rgba(240, 123, 205, 0.15);
+}
+
+.hero-title {
+  display: block;
+  font-size: 38rpx;
+  color: #6f2454;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #8b4f75;
+}
+
+.list {
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.card {
+  border-radius: 22rpx;
+  background: #ffffff;
+  padding: 28rpx;
+  box-shadow: 0 8rpx 22rpx rgba(240, 123, 205, 0.1);
+}
+
+.card-title {
+  display: block;
+  font-size: 30rpx;
+  color: #5f2f4e;
+  font-weight: 600;
+}
+
+.card-desc {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #7b5a6e;
+  line-height: 1.6;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 28rpx;
+  padding: 0 28rpx;
+}
+
+.back-btn {
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #f07bcd;
+  color: #ffffff;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 20rpx rgba(240, 123, 205, 0.28);
+}

@@ -7,6 +7,8 @@
    "pages/dailydetails/dailydetails",
    "pages/collecteddetails/collecteddetails",
    "pages/user/user",
+   "pages/guide/guide",
+   "pages/about/about",
    "pages/style/style",
    "pages/gallery/gallery",
     "pages/index/index",

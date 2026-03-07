@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="hero">
+    <text class="name">{{project.name}}</text>
+    <text class="version">{{project.version}}</text>
+    <text class="summary">{{project.summary}}</text>
+  </view>
+
+  <view class="card">
+    <text class="card-title">Included Demo Flows</text>
+    <block wx:for="{{items}}" wx:key="*this">
+      <view class="row">
+        <view class="dot"></view>
+        <text class="row-text">{{item}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="footer">
+    <view class="back-btn" bindtap="onBack">Back</view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="hero">
+    <text class="hero-title">Parent Guide</text>
+    <text class="hero-subtitle">Quick support strategies for daily communication</text>
+  </view>
+
+  <view class="list">
+    <block wx:for="{{sections}}" wx:key="title">
+      <view class="card">
+        <text class="card-title">{{item.title}}</text>
+        <text class="card-desc">{{item.desc}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="footer">
+    <view class="back-btn" bindtap="onBack">Back</view>
+  </view>
+</view>

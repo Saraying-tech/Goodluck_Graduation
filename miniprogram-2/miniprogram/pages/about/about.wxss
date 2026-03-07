@@ -1,0 +1,95 @@
+.page {
+  min-height: 100vh;
+  background: #fff7fb;
+  padding: 28rpx 28rpx 180rpx;
+  box-sizing: border-box;
+}
+
+.hero {
+  border-radius: 24rpx;
+  padding: 30rpx;
+  background: linear-gradient(140deg, #ffe2ee 0%, #ffd3ea 55%, #f6c7ee 100%);
+  box-shadow: 0 10rpx 30rpx rgba(240, 123, 205, 0.15);
+}
+
+.name {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #6e2f54;
+}
+
+.version {
+  display: inline-flex;
+  margin-top: 12rpx;
+  background: #ffffff;
+  color: #8f4a73;
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.summary {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 25rpx;
+  color: #7c5470;
+  line-height: 1.6;
+}
+
+.card {
+  margin-top: 24rpx;
+  border-radius: 22rpx;
+  background: #ffffff;
+  padding: 26rpx;
+  box-shadow: 0 8rpx 22rpx rgba(240, 123, 205, 0.1);
+}
+
+.card-title {
+  display: block;
+  font-size: 30rpx;
+  color: #5f2f4e;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 12rpx;
+}
+
+.dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background: #f07bcd;
+  margin: 14rpx 14rpx 0 4rpx;
+  flex: 0 0 auto;
+}
+
+.row-text {
+  font-size: 25rpx;
+  color: #735b6a;
+  line-height: 1.6;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 28rpx;
+  padding: 0 28rpx;
+}
+
+.back-btn {
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #f07bcd;
+  color: #ffffff;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 20rpx rgba(240, 123, 205, 0.28);
+}
