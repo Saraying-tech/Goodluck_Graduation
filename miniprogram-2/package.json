@@ -2,7 +2,9 @@
   "name": "miniprogram-ts-quickstart",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "dev": "node -e \"console.log('This project uses WeChat DevTools. Open miniprogram-2/project.config.json in WeChat DevTools to run it.')\""
+  },
   "keywords": [],
   "author": "",
   "license": "",
