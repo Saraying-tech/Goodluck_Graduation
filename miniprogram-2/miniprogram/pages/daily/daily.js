@@ -7,12 +7,12 @@ Page({
     activeFilter: 'all',
     activeValue: 'daily', 
     artList: [
-      { id: 1, title: '一起食饭啦', isFavorite: false, tag1: '日常生活', tag2: '手绘风', date: '2026-03-01', imageUrl: '/assets/images/sample1.jpg' },
-      { id: 2, title: '你做得好叻啊', isFavorite: true,  tag1: '日常生活', tag2: '卡通风', date: '2026-03-02', imageUrl: '/assets/images/sample2.jpg' },
-      { id: 3, title: '彩虹挂系天空', isFavorite: false, tag1: '认知娱乐', tag2: '水彩风', date: '2026-03-03', imageUrl: '/assets/images/sample1.jpg' },
-      { id: 4, title: '去超市买水果', isFavorite: false, tag1: '日常生活', tag2: '卡通风', date: '2026-03-04', imageUrl: '/assets/images/sample2.jpg' },
-      { id: 5, title: '火车穿过山洞', isFavorite: false, tag1: '认知娱乐', tag2: '手绘风', date: '2026-03-05', imageUrl: '/assets/images/sample1.jpg' },
-      { id: 6, title: '感觉好开心',     isFavorite: false, tag1: '情感表达', tag2: '卡通风', date: '2026-03-05', imageUrl: '/assets/images/sample2.jpg' }
+      { id: 1, title: '一起食饭啦', isFavorite: false, tag1: '日常生活', tag2: '手绘风', date: '2026-03-01', imageUrl: '/assets/images/style_hand.jpg' },
+      { id: 2, title: '你做得好叻啊', isFavorite: true,  tag1: '日常生活', tag2: '卡通风', date: '2026-03-02', imageUrl: '/assets/images/style_cartoon.jpg' },
+      { id: 3, title: '彩虹挂系天空', isFavorite: false, tag1: '认知娱乐', tag2: '水彩风', date: '2026-03-03', imageUrl: '/assets/images/style_watercolor.jpg' },
+      { id: 4, title: '去超市买水果', isFavorite: false, tag1: '日常生活', tag2: '卡通风', date: '2026-03-04', imageUrl: '/assets/images/style_cartoon.jpg' },
+      { id: 5, title: '火车穿过山洞', isFavorite: false, tag1: '认知娱乐', tag2: '手绘风', date: '2026-03-05', imageUrl: '/assets/images/style_hand.jpg' },
+      { id: 6, title: '感觉好开心',     isFavorite: false, tag1: '情感表达', tag2: '卡通风', date: '2026-03-05', imageUrl: '/assets/images/style_cartoon.jpg' }
     ]
   },
 
