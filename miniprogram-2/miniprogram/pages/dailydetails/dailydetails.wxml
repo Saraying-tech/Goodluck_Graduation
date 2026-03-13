@@ -7,7 +7,7 @@
     <view class="result-card">
       <view class="card-header-text">{{pageType === 'daily' ? '日常画册' : '我的图库'}}</view>
       
-      <image class="result-image" src="{{imageUrl || '/assets/images/sample1.jpg'}}" mode="aspectFill" />
+      <image class="result-image" src="{{imageUrl || '/assets/images/style_hand.jpg'}}" mode="aspectFill" />
 
       <view class="result-content">
         <view class="title-row">

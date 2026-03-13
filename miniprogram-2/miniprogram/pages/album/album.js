@@ -1,6 +1,6 @@
 Page({
   data: {
-    imageUrl: '/assets/images/generated_art.jpg',
+    imageUrl: '/assets/images/style_cartoon.jpg',
     styleTag: '卡通风格',
     dateText: '2026.03.04',
     contentText: '今日去超市买苹果',
@@ -33,7 +33,7 @@ Page({
       const timeText = `${now.getFullYear()}.${now.getMonth() + 1}.${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
 
       this.setData({
-        imageUrl: '/assets/images/generated_art.jpg?' + Date.now(), // 强制刷新
+        imageUrl: '/assets/images/style_cartoon.jpg?' + Date.now(), // 强制刷新
         dateText: timeText,
         contentText: '今天去公园玩滑滑梯',
         selectedEmoji: '' // 清空反馈
